@@ -19,7 +19,18 @@
     display: flex;
     flex-direction: row;
   }
-  
+  .channel-list__container-toggle {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translate(-50%, -50%);
+    height: 70px;
+    width: 45px;
+    border-radius: 0 150px 150px 0;
+    background-color: #76B900;
+    z-index: 4;
+    cursor: pointer;
+  }
   .auth__form-container_fields {
     flex: 2;
     display: flex;
