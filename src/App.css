@@ -1091,7 +1091,7 @@
   
   .str-chat__message-team-meta time {
     visibility: visible;
-    z-index: 2;
+    z-index: 1;
     font-family: Helvetica Neue, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -1120,7 +1120,7 @@
   }
   
   .str-chat__message-replies-count-button {
-    z-index: 2;
+    z-index: 1;
     display: flex;
     /* justify-content: flex-end; */
     font-family: Helvetica Neue, sans-serif;
@@ -1178,7 +1178,7 @@
     box-sizing: border-box;
     border-radius: 50vw;
     padding: 6px 6px 4px 6px;
-    z-index: 3;
+    z-index: 1;
   }
   
   ul.str-chat__simple-reactions-list:hover {
@@ -1475,7 +1475,7 @@
   }
   
   .team-message-input__wrapper .str-chat__input--emojipicker {
-    z-index: 3;
+    z-index: 20;
     position: absolute;
     bottom: 112px;
     left: 20px;
