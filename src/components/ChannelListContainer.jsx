@@ -20,7 +20,7 @@ const SideBar = ({ logout }) => (
                 <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
         </div>
-        <div style={{color: "white" , marginLeft : "7.5px" , marginTop: "-7.5px" ,  cursor: "pointer"}} onClick={logout}>
+        <div className="channel-list__sidebar__text" onClick={logout}>
             Sign out
         </div>
     </div>
