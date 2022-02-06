@@ -550,6 +550,20 @@
     left: 1px;
     top: 55px;
   }
+
+  .UsersOnline {
+    position: absolute;
+    height: fit-content;
+    width: 200px;
+    background: var(--background-color);
+    border: 1px solid #e9e9ea;
+    box-sizing: border-box;
+    box-shadow: var(--background-color);
+    border-radius: 8px;
+    z-index: 100;
+    left: 1px;
+    top: 55px;
+  }
   
   .channel-search__results-header {
     width: fit-content;

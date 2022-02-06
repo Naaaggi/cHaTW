@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { MessageList, MessageInput, Thread, Window, useChannelActionContext, Avatar, useChannelStateContext, useChatContext } from 'stream-chat-react';
+import { UsersOnline } from '.';
 
 import { ChannelInfo } from '../assets';
 
 export const GiphyContext = React.createContext({});
+
 
 const ChannelInner = ({ setIsEditing }) => {
   const [giphyState, setGiphyState] = useState(false);
@@ -43,8 +45,10 @@ const ChannelInner = ({ setIsEditing }) => {
 };
 
 const TeamChannelHeader = ({ setIsEditing }) => {
-    const { channel, watcher_count } = useChannelStateContext();
+    const { channel, watchers, watcher_count } = useChannelStateContext();
     const { client } = useChatContext();
+
+
   
     const MessagingHeader = () => {
       const members = Object.values(channel.state.members).filter(({ user }) => user.id !== client.userID);
@@ -80,12 +84,24 @@ const TeamChannelHeader = ({ setIsEditing }) => {
       if (watchers === 1) return '1 user online';
       return `${watchers} users online`;
     };
-  
+    const DirectPreview = () => {
+      // console.log(watcher[0])
+
+
+      const watcherss = Object.values(channel.state.members).filter(({ user }) => user.online === true);
+      console.log(watcherss)
+      return (
+          <div className="channel-preview__item single">
+              <p>{watcherss[0]?.user?.fullName || watcherss[0]?.user?.id}</p>
+          </div>
+      )
+  }
     return (
       <div className='team-channel-header__container'>
         <MessagingHeader />
         <div className='team-channel-header__right'>
           <p className='team-channel-header__right-text'>{getWatcherText(watcher_count)}</p>
+          <p> <DirectPreview/></p>
         </div>
       </div>
     );
