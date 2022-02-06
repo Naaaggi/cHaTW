@@ -1,0 +1,28 @@
+#darkMode {
+    background: #fff url("../moon.png") no-repeat center;
+    background-size: 30px 30px;
+    width: 44px;
+    height: 44px;
+    position:absolute;
+
+    filter: grayscale(100%);
+    border: none;
+    bottom: 79px;
+    margin-left: 14px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+    cursor: pointer;
+}
+  
+  #darkMode:hover,
+  #darkMode:focus {
+    filter: none;
+    background-color: black;
+    cursor: pointer;
+  }
+  
+  #darkMode.clicked {
+    filter: none !important;
+    background-color: black;
+  }

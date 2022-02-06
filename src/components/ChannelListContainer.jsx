@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
-import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
+
+import { ChannelSearch, TeamChannelList, TeamChannelPreview, DarkMode } from './';
 import htwIcon from '../assets/htwIcon.png'
 import LogoutIcon from '../assets/logout.png'
 
@@ -15,6 +16,7 @@ const SideBar = ({ logout }) => (
                 <img src={htwIcon} alt="HTW" width="30" />
             </div>
         </div>
+        
         <div className="channel-list__sidebar__icon2">
             <div className="icon1__inner" onClick={logout}>
                 <img src={LogoutIcon} alt="Logout" width="30" />
@@ -23,6 +25,7 @@ const SideBar = ({ logout }) => (
         <div className="channel-list__sidebar__text" onClick={logout}>
             Sign out
         </div>
+        <DarkMode />
     </div>
 );
 
