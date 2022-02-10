@@ -85,9 +85,9 @@ const TeamChannelHeader = ({ setIsEditing }) => {
       return `${watchers} users online`;
     };
     const DirectPreview = () => {
-      // console.log(watcher[0])
+      
 
-
+      //Watchers are people who are online and we can get them from the library 'stream-chat-react'
       const watcherss = Object.values(channel.state.members).filter(({ user }) => user.online === true);
       console.log(watcherss)
       return (
