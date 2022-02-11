@@ -45,7 +45,7 @@ const ChannelInner = ({ setIsEditing }) => {
 };
 
 const TeamChannelHeader = ({ setIsEditing }) => {
-    const { channel, watchers, watcher_count } = useChannelStateContext();
+    const { channel, watcher_count } = useChannelStateContext();
     const { client } = useChatContext();
 
 
@@ -84,24 +84,34 @@ const TeamChannelHeader = ({ setIsEditing }) => {
       if (watchers === 1) return '1 user online';
       return `${watchers} users online`;
     };
-    const DirectPreview = () => {
-      
 
-      //Watchers are people who are online and we can get them from the library 'stream-chat-react'
-      const watcherss = Object.values(channel.state.members).filter(({ user }) => user.online === true);
-      console.log(watcherss)
-      return (
-          <div className="channel-preview__item single">
-              <p>{watcherss[0]?.user?.fullName || watcherss[0]?.user?.id}</p>
-          </div>
-      )
-  }
+  const [isShown, setIsShown] = useState(false);
+  const watchers = Object.values(channel.state.members).filter(({ user }) => user.online === true);
+
+  console.log(watchers);
+
+
     return (
       <div className='team-channel-header__container'>
         <MessagingHeader />
-        <div className='team-channel-header__right'>
-          <p className='team-channel-header__right-text'>{getWatcherText(watcher_count)}</p>
-          <p> <DirectPreview/></p>
+        <div className='team-channel-header__right' onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}>
+          <p className='team-channel-header__right-text' >{getWatcherText(watcher_count)} </p>
+           {isShown && (
+       <div className="usersOnline"> 
+       {watchers.map(function(watcher, i){
+        return (
+        <div className="channel-preview__item single" obj={watcher} key={i}>
+              <Avatar 
+                    image={watcher?.user?.image}
+                    name={watcher?.user?.fullName || watcher?.user?.id}
+                    size={24}
+                />
+              <p>{watcher?.user?.fullName || watcher?.user?.id}</p>
+          </div>);
+        })}</div>
+      )}
+          
         </div>
       </div>
     );
