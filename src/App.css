@@ -638,6 +638,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-y: scroll;
+    
   }
   
   .create-channel__header {
@@ -654,7 +656,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-    color: #2c2c30;
+    color: var(--text-color);
     margin-left: 20px;
   }
   
@@ -718,7 +720,7 @@
     font-weight: bold;
     font-size: 18px;
     padding: 10px 20px;
-    color: var(--background-color);
+    color: var(--text-color);
     border-radius: 8px;
     cursor: pointer;
   }
@@ -814,7 +816,6 @@
   .edit-channel__container {
     display: flex;
     overflow-y: scroll;
-
     flex-direction: column;
     height: 100%;
   }
