@@ -88,9 +88,6 @@ const TeamChannelHeader = ({ setIsEditing }) => {
   const [isShown, setIsShown] = useState(false);
   const watchers = Object.values(channel.state.members).filter(({ user }) => user.online === true);
 
-  console.log(watchers);
-
-
     return (
       <div className='team-channel-header__container'>
         <MessagingHeader />
