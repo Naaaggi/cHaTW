@@ -8,6 +8,7 @@ const DarkMode = () => {
   const darkTheme = "dark";
   let theme;
 
+  // added a dark theme suggested by some classmates
   if (localStorage) {
     theme = localStorage.getItem("theme");
   }
