@@ -4,6 +4,7 @@ import { Avatar, useChatContext } from 'stream-chat-react';
 import { InviteIcon } from '../assets';
 
 const ListContainer = ({ children }) => {
+    //this component will used a lot to show the users list 
     return (
         <div className="user-list__container">
             <div className="user-list__header">
@@ -46,6 +47,7 @@ const UserList = ({ setSelectedUsers }) => {
     const [loading, setLoading] = useState(false);
     const [listEmpty, setListEmpty] = useState(false);
     const [error, setError] = useState(false);
+    //added an error variable so it can show a message when the fetching of the users list fail
 
     useEffect(() => {
         const getUsers = async () => {
