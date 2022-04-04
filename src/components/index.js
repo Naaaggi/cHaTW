@@ -11,3 +11,5 @@ export { default as Auth} from './Auth';
 export { default as UserList } from './UserList';
 export { default as ResultsDropdown } from './ResultsDropdown';
 export { default as DarkMode } from './DarkMode';
+
+//this file is made to export all the component in a best practice way.
